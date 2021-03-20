@@ -3,10 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { SiteContextProvider } from './context/SiteContext';
+import { PlayerContextProvider } from './context/PlayerContext';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <PlayerContextProvider>
+      <SiteContextProvider>
+        <App />
+      </SiteContextProvider>
+    </PlayerContextProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

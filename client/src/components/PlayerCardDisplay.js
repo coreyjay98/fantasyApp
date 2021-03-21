@@ -51,12 +51,12 @@ const PlayerCardDisplay = ({ player }) => {
           <div className="statDiv">
             <div className="left">
               <h3>Goals: {player.games.goals}</h3>
-              <h3>Assists :</h3>
+              <h3>Assists: {player.games.assists || 0}</h3>
               <h3>Apps: {player.games.appearances}</h3>
             </div>
             <div className="right">
-              <h3>Cards :</h3>
-              <h3>Avg Rating :</h3>
+              <h3>Cards: {player.games.cards}</h3>
+              <h3>Avg Rating: </h3>
               <h3>Nation: {player.nationality}</h3>
             </div>
           </div>

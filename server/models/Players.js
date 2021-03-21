@@ -8,6 +8,7 @@ const PlayerSchema = new Schema({
   lastName: String,
   nationality: String,
   photo: String,
+  position: String,
   team: {
     teamName: String,
     teamId: Number,
@@ -16,6 +17,9 @@ const PlayerSchema = new Schema({
   games: {
     appearances: Number,
     goals: Number,
+    assists: Number,
+    rating: Number,
+    cards: Number,
   },
 });
 

@@ -1,8 +1,9 @@
 import usePlayerContext from '../../hooks/usePlayerContext';
 import { useDrop } from 'react-dnd';
 import { FaTrash } from 'react-icons/fa';
+import { IoAddCircleOutline } from 'react-icons/io5';
 
-const PitchPosition = ({ position, customClass, selectedPlayer }) => {
+const PitchPosition = ({ position, customClass, selectedPlayer, cardPos }) => {
   const { addNewPlayer } = usePlayerContext();
   const [{ canDrop, isOver }, drop] = useDrop(() => ({
     accept: 'card',
@@ -25,30 +26,46 @@ const PitchPosition = ({ position, customClass, selectedPlayer }) => {
   return (
     <>
       <div
-        className={`${customClass} card ${
+        className={`${customClass} ${
           selectedPlayer === 0 || selectedPlayer == undefined
-            ? null
-            : 'hoverDelete'
+            ? 'emptyCard'
+            : 'card'
         }`}
         ref={drop}
         data="one"
         style={{
-          border: isOver ? '2px solid red' : '2px solid blue',
+          border: isOver ? '2px solid red' : null,
         }}
       >
-        {selectedPlayer === 0 || selectedPlayer === undefined ? null : (
+        {selectedPlayer === 0 || selectedPlayer === undefined ? (
+          <div className="plusSign">
+            <IoAddCircleOutline />
+          </div>
+        ) : (
           <>
-            <div className="delete" onClick={deleteSelection}>
-              <FaTrash />
+            <div className="cardBody">
+              <div className="playerLeft">
+                <span className="position">{cardPos}</span>
+                <div
+                  className="playerLogo"
+                  style={{
+                    backgroundImage: `url(${selectedPlayer.team.teamLogo})`,
+                  }}
+                ></div>
+                <div className="delete" onClick={deleteSelection}>
+                  <FaTrash />
+                </div>
+              </div>
+              <div className="playerRight">
+                <div
+                  className="photo"
+                  style={{ backgroundImage: `url(${selectedPlayer.photo})` }}
+                ></div>
+              </div>
             </div>
-            <div
-              className="photo"
-              style={{ backgroundImage: `url(${selectedPlayer.photo})` }}
-            ></div>
             <span className="name">
               <p>{selectedPlayer.lastName}</p>
             </span>
-            <span className="position">CB</span>
           </>
         )}
       </div>

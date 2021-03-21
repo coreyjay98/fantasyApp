@@ -7,9 +7,9 @@ const authCheck = require('../middleware/auth');
 
 const { inputPlayerData } = require('../controller/orm');
 
-/* app.get('/player', async (req, res) => {
+app.get('/player', async (req, res) => {
   console.log('hi');
-  for (let i = 31; i <= 37; i++) {
+  for (let i = 30; i <= 37; i++) {
     console.log('i', i);
     try {
       const result = await fetch(
@@ -29,7 +29,7 @@ const { inputPlayerData } = require('../controller/orm');
       console.log(err);
     }
   }
-}); */
+});
 
 /* app.get('/playerTest', async (req, res) => {
   const result = await fetch(

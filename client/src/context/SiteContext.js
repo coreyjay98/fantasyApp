@@ -13,10 +13,10 @@ const SiteContextProvider = ({ children }) => {
 
   const loginUser = async (username, password) => {
     const response = await FetchLogin(username, password);
-    console.log(response);
     if (response.success) {
       setUsername(response.username);
       setStorage(response.token);
+      setPlayerTeam(response.userTeam);
       setLoginError(false);
       setLoggedIn(true);
     } else {
@@ -37,6 +37,7 @@ const SiteContextProvider = ({ children }) => {
   const logoutUser = async () => {
     localStorage.clear();
     setUsername('');
+    setPlayerTeam({});
     setLoggedIn(false);
   };
   return (

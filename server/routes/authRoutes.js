@@ -44,6 +44,7 @@ app.post('/login', async ({ body }, res) => {
     token,
     username,
     id: user.id,
+    userTeam: user.team,
     success: true,
   });
 });

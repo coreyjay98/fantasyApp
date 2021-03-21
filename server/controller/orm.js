@@ -12,6 +12,7 @@ module.exports = {
         lastName: player.lastname,
         nationality: player.birth.country,
         photo: player.photo,
+        position: statistics[0].games.position,
         team: {
           teamName: statistics[0].team.name,
           teamId: statistics[0].team.id,
@@ -20,6 +21,9 @@ module.exports = {
         games: {
           appearances: statistics[0].games.appearences,
           goals: statistics[0].goals.total,
+          assists: statistics[0].goals.assists,
+          rating: statistics[0].games.rating,
+          cards: statistics[0].cards.yellow,
         },
       });
       console.log(entry);

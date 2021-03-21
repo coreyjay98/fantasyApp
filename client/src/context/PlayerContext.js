@@ -25,6 +25,7 @@ const PlayerContextProvider = ({ children }) => {
   };
 
   const setPlayerTeam = (team) => {
+    console.log(team);
     _setPlayerTeam(team);
   };
 

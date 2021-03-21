@@ -39,7 +39,7 @@ const PlayerListItem = ({ player }) => {
       className="playerListItem"
     >
       <ListItemText primary={`${player.lastName}`} />
-      <ListItemText primary="CB" className="middleEntry" />
+      <ListItemText primary={player.position} className="middleEntry" />
       <ListItemText>
         <div
           style={{

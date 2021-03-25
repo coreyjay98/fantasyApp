@@ -11,7 +11,7 @@ const PitchPositions = () => {
         <PitchPosition
           position="goalkeeper"
           customClass="goalkeeper"
-          selectedPlayer={playerTeam.goalkeeper}
+          selectedPlayer={playerTeam ? playerTeam.goalkeeper : 0}
           cardPos="GK"
         />
       </div>
@@ -19,25 +19,25 @@ const PitchPositions = () => {
         <PitchPosition
           position="rightBack"
           customClass="defender"
-          selectedPlayer={playerTeam.rightBack}
+          selectedPlayer={playerTeam ? playerTeam.rightBack : 0}
           cardPos="RB"
         />
         <PitchPosition
           position="centreBackRight"
           customClass="defender"
-          selectedPlayer={playerTeam.centreBackRight}
+          selectedPlayer={playerTeam ? playerTeam.centreBackRight : 0}
           cardPos="CB"
         />
         <PitchPosition
           position="centreBackLeft"
           customClass="defender"
-          selectedPlayer={playerTeam.centreBackLeft}
+          selectedPlayer={playerTeam ? playerTeam.centreBackLeft : 0}
           cardPos="CB"
         />
         <PitchPosition
           position="leftBack"
           customClass="defender"
-          selectedPlayer={playerTeam.leftBack}
+          selectedPlayer={playerTeam ? playerTeam.leftBack : 0}
           cardPos="LB"
         />
       </div>
@@ -45,25 +45,25 @@ const PitchPositions = () => {
         <PitchPosition
           position="rightMidfield"
           customClass="midfielder"
-          selectedPlayer={playerTeam.rightMidfield}
+          selectedPlayer={playerTeam ? playerTeam.rightMidfield : 0}
           cardPos="RM"
         />
         <PitchPosition
           position="centreMidfieldRight"
           customClass="midfielder"
-          selectedPlayer={playerTeam.centreMidfieldRight}
+          selectedPlayer={playerTeam ? playerTeam.centreMidfieldRight : 0}
           cardPos="CM"
         />
         <PitchPosition
           position="centreMidfieldLeft"
           customClass="midfielder"
-          selectedPlayer={playerTeam.centreMidfieldLeft}
+          selectedPlayer={playerTeam ? playerTeam.centreMidfieldLeft : 0}
           cardPos="CM"
         />
         <PitchPosition
           position="leftMidfield"
           customClass="midfielder"
-          selectedPlayer={playerTeam.leftMidfield}
+          selectedPlayer={playerTeam ? playerTeam.leftMidfield : 0}
           cardPos="LM"
         />
       </div>
@@ -71,13 +71,13 @@ const PitchPositions = () => {
         <PitchPosition
           position="rightStriker"
           customClass="attacker"
-          selectedPlayer={playerTeam.rightStriker}
+          selectedPlayer={playerTeam ? playerTeam.rightStriker : 0}
           cardPos="RS"
         />
         <PitchPosition
           position="leftStriker"
           customClass="attacker"
-          selectedPlayer={playerTeam.leftStriker}
+          selectedPlayer={playerTeam ? playerTeam.leftStriker : 0}
           cardPos="LS"
         />
       </div>

@@ -5,6 +5,7 @@ const SaveButton = () => {
 
   const savePlayerTeam = async (event) => {
     event.preventDefault();
+    console.log(playerTeam);
     const access = await localStorage.getItem('token');
     const res = await fetch('api/team', {
       method: 'POST',

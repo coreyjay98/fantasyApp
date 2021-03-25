@@ -3,13 +3,10 @@ import ListItemText from '@material-ui/core/ListItemText';
 import { ItemTypes } from '../dnd/Constants';
 import { useDrag } from 'react-dnd';
 import usePlayerContext from '../hooks/usePlayerContext';
+import { useState } from 'react';
 
 const PlayerListItem = ({ player }) => {
-  const {
-    addNewPlayer,
-    removePlayerFromAll,
-    setSelectedPlayer,
-  } = usePlayerContext();
+  const { addNewPlayer, setSelectedPlayer, setPlayerDrop } = usePlayerContext();
   const [{ isDragging }, drag] = useDrag(() => ({
     type: ItemTypes.CARD,
     item: {
@@ -22,7 +19,6 @@ const PlayerListItem = ({ player }) => {
       const droppedOn = monitor.getDropResult();
       if (droppedOn === null) return;
       addNewPlayer(droppedOn.position, item.player);
-      removePlayerFromAll(item.player);
     },
   }));
 

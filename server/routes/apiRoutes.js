@@ -7,7 +7,7 @@ const authCheck = require('../middleware/auth');
 
 const { inputPlayerData } = require('../controller/orm');
 
-app.get('/player', async (req, res) => {
+/* app.get('/player', async (req, res) => {
   console.log('hi');
   for (let i = 30; i <= 37; i++) {
     console.log('i', i);
@@ -29,7 +29,7 @@ app.get('/player', async (req, res) => {
       console.log(err);
     }
   }
-});
+}); */
 
 /* app.get('/playerTest', async (req, res) => {
   const result = await fetch(
@@ -47,8 +47,12 @@ app.get('/player', async (req, res) => {
   res.send(response);
 }); */
 
-app.get('/players', async (req, res) => {
+/* app.get('/players', async (req, res) => {
   console.log('hit');
+  const find = await Player.find();
+  res.send(find);
+}); */
+app.get('/players', async (req, res) => {
   const find = await Player.find();
   res.send(find);
 });
@@ -56,6 +60,7 @@ app.get('/players', async (req, res) => {
 app.post('/team', authCheck, async (req, res) => {
   console.log(req.body.playerTeam);
   const validTeam = Object.values(req.body.playerTeam).filter((el) => el === 0);
+  console.log(validTeam.length);
   if (validTeam.length) {
     return res.send({ success: false, message: 'Not Enough Players' });
   }

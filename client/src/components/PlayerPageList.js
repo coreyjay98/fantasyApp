@@ -4,6 +4,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import PlayerListItem from './PlayerListItem';
 import SortingInput from './SortingInput';
 import usePlayerContext from '../hooks/usePlayerContext';
+import PaginateButtons from './PaginateButtons';
 
 const PlayerPageList = () => {
   const { allPlayers } = usePlayerContext();
@@ -31,6 +32,7 @@ const PlayerPageList = () => {
           </List>
         </div>
       </div>
+      <PaginateButtons />
     </>
   );
 };

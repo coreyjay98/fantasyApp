@@ -4,11 +4,7 @@ import { useDrag } from 'react-dnd';
 import { FaTrash } from 'react-icons/fa';
 
 const PlayerCardDisplay = ({ player }) => {
-  const {
-    addNewPlayer,
-    removePlayerFromAll,
-    setSelectedPlayer,
-  } = usePlayerContext();
+  const { addNewPlayer, setSelectedPlayer } = usePlayerContext();
   const [{ isDragging }, drag] = useDrag(() => ({
     type: ItemTypes.CARD,
     item: {
@@ -21,7 +17,6 @@ const PlayerCardDisplay = ({ player }) => {
       const droppedOn = monitor.getDropResult();
       if (droppedOn === null) return;
       addNewPlayer(droppedOn.position, item.player);
-      removePlayerFromAll(item.player);
       removeSelection();
     },
   }));

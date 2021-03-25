@@ -3,6 +3,7 @@ import MainLayout from './components/MainLayout';
 import HomePage from './components/HomePage';
 import TeamPage from './components/TeamPage';
 import AccountPage from './components/AccountPage';
+import FixturePage from './components/FixturePage';
 import SignupPage from './components/SignupPage';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import useSiteContext from './hooks/useSiteContext';
@@ -33,6 +34,7 @@ function App() {
           <Route exact path="/team" component={TeamPage} />
           <Route exact path="/account" component={AccountPage} />
           <Route exact path="/signup" component={SignupPage} />
+          <Route exact path="/fixtures" component={FixturePage} />
         </Switch>
       </MainLayout>
     </Router>

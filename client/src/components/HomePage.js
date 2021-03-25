@@ -2,9 +2,12 @@ import PlayerList from './PlayerList';
 import FixtureList from './FixtureList';
 import useSiteContext from '../hooks/useSiteContext';
 import HomeStats from './HomeStats';
+import { useState } from 'react';
+import FixturePage from './FixturePage';
 
 const HomePage = () => {
   const { username } = useSiteContext();
+  const [allTeams, setAllTeams] = useState([]);
   return (
     <div className="background">
       <div className="page homePage">
@@ -15,9 +18,8 @@ const HomePage = () => {
           <div className="homeLeft">
             <HomeStats />
           </div>
-          <div className="playerList">
-            <PlayerList />
-            <FixtureList />
+          <div className="fixturePage">
+            <FixturePage />
           </div>
         </div>
       </div>

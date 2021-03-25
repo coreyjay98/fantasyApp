@@ -79,7 +79,7 @@ body {
   .homePage {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: 95%;
   }
   .page {
     background-color: $blue;
@@ -103,6 +103,15 @@ body {
       display: flex;
       .homeLeft {
         width: 50%;
+        height: 93%;
+        display: flex;
+      }
+      .fixturePage {
+        width: 50%;
+        overflow-y: scroll;
+        height: 93%;
+        display: flex;
+        flex-direction: column;
       }
       .playerList {
         height: 92%;
@@ -130,6 +139,176 @@ body {
               margin: 0;
               background-color: $darkblue;
               border: solid 1px black;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.homeLeftDisplay {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  .title {
+    width: 100%;
+  }
+  .topScorers {
+    height: 40%;
+    .carousel {
+      height: 100%;
+      width: 100%;
+      .carousel-root {
+        height: 85%;
+        padding-left: 20%;
+        padding-right: 20%;
+        .carouselContent {
+          box-shadow: 2px 2px $darkblue;
+          height: 250px;
+          width: 100%;
+          display: flex;
+          border: solid 2px $darkblue;
+          background-color: $darkblue;
+          color: aliceblue;
+          border-radius: 15px;
+          .carouselLeft {
+            width: 45%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 95%;
+            .image {
+              height: 80%;
+              width: 80%;
+              background-repeat: no-repeat;
+              background-size: contain;
+              background-position-x: center;
+              background-position-y: center;
+              background-attachment: initial;
+              background-origin: initial;
+              background-color: initial;
+            }
+          }
+          .carouselRight {
+            width: 55%;
+            display: flex;
+            flex-direction: column;
+            .name {
+              width: 100%;
+              display: flex;
+              height: 25%;
+              h1 {
+                width: 80%;
+                font-size: 1.7rem;
+                align-self: center;
+                text-align: left;
+                padding-top: 25px;
+              }
+              .logoHolder {
+                width: 20%;
+                display: flex;
+                height: 100%;
+                .teamLogo {
+                  margin-top: 15px;
+                  width: 100%;
+                  height: 100%;
+                  background-repeat: no-repeat;
+                  background-size: contain;
+                  background-position-x: center;
+                  background-position-y: center;
+                  background-attachment: initial;
+                  background-origin: initial;
+                  background-color: initial;
+                }
+              }
+            }
+            .stats {
+              height: 65%;
+              display: flex;
+              text-align: left;
+              .leftStats {
+                text-align: left;
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                padding-left: 5px;
+                h2 {
+                  font-weight: normal;
+                }
+              }
+              .rightStats {
+                @extend .leftStats;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .leagueTable {
+    height: 60%;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    .homeTitle {
+      width: 100%;
+      height: 10%;
+      display: flex;
+      align-items: center;
+      h1 {
+        margin-left: 10px;
+      }
+    }
+    .tableHolder {
+      height: 95%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .table {
+        height: 93%;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        .listHeader {
+          width: 99%;
+          height: 10%;
+          .MuiList-root {
+            margin: 0 !important;
+            padding: 0 !important;
+            .MuiListItem-root {
+              border: none;
+              background-color: transparent;
+              color: black;
+            }
+          }
+        }
+        .listHolder {
+          overflow-y: scroll;
+          height: 90%;
+        }
+        li {
+          border: solid 1px black;
+          justify-content: space-between !important;
+          color: aliceblue;
+          background-color: $darkblue;
+          text-align: center;
+          div {
+            width: 3.5rem;
+            height: 4.5vh;
+          }
+        }
+        .MuiListItemAvatar-root {
+          height: 100%;
+          .MuiAvatar-root {
+            overflow: visible;
+            height: 100%;
+            img {
+              height: 100%;
+              width: 100%;
+              padding: 1px;
             }
           }
         }
@@ -256,7 +435,7 @@ body {
       align-self: center;
       width: 100%;
       height: 95%;
-      margin: 10px;
+      margin: 5px;
       background: url('./assets/pitchImage.svg');
       background-repeat: no-repeat;
       background-size: cover;
@@ -284,12 +463,13 @@ body {
       .goal {
         @extend .defense;
         justify-content: center !important;
+        margin-top: 0 !important;
         .goalkeeper {
           @extend .defender;
         }
       }
       .defense {
-        height: 20%;
+        height: 19%;
         margin-top: 30px;
         width: 80%;
         max-width: 700px;
@@ -298,6 +478,7 @@ body {
         justify-content: space-between;
         align-items: center;
         padding: 5px;
+        margin-bottom: 7px;
         .defender {
           height: 100%;
           width: 18%;
@@ -397,13 +578,31 @@ body {
               padding: 2px;
               font-size: 26px;
               font-weight: bold;
+              height: 25%;
             }
             .playerLogo {
               width: 100%;
-              height: 100%;
+              height: 100px;
               background-size: contain;
               background-repeat: no-repeat;
               align-self: center;
+            }
+            .statDiv {
+              display: flex;
+              flex-direction: column;
+              height: 60%;
+              span {
+                align-content: center;
+                font-size: 90%;
+                width: 100%;
+                vertical-align: middle;
+                svg {
+                  align-self: center;
+                  margin-top: 2px;
+                  margin-left: 2px;
+                  width: 40%;
+                }
+              }
             }
           }
           .playerRight {
@@ -430,8 +629,13 @@ body {
           word-wrap: break-word;
           width: 100%;
           font-weight: bold;
-          font-size: 100%;
-          scale: 1;
+          font-size: 0.9vw;
+          background-color: aliceblue;
+          border-radius: 15px;
+          margin-top: 2px;
+          border: solid 1px $darkblue;
+          padding: 3px;
+          margin-bottom: 5px;
         }
         &:hover {
           cursor: pointer;
@@ -554,7 +758,7 @@ body {
   }
   .playerList {
     min-height: 55%;
-    max-height: 100%;
+    max-height: 95%;
     display: flex;
     flex-direction: column;
     margin-bottom: 8px;
@@ -605,6 +809,118 @@ body {
             width: 50px;
           }
         }
+      }
+    }
+  }
+}
+.paginate {
+  width: 80%;
+  align-self: center;
+  height: 5%;
+  display: flex;
+  justify-content: space-between;
+  button {
+    height: 60%;
+  }
+}
+
+.loginAlert {
+  width: 100%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  h2 {
+    margin: 5px;
+  }
+  a {
+    margin-left: 4px;
+    color: $darkblue;
+  }
+}
+
+.fixtureList {
+  width: 100%;
+  height: 100%;
+  align-self: center;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  .fixtureItem {
+    width: 100%;
+    display: flex;
+    .teamContentRight {
+      @extend .teamContent;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-start;
+      .title {
+        @extend .title;
+        display: flex;
+        flex-direction: row-reverse;
+        h2 {
+          text-align: right;
+        }
+      }
+    }
+    .center {
+      width: 20%;
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: column;
+      .versus {
+        height: 40%;
+        width: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        h2 {
+          font-size: 5vh;
+          height: 100%;
+        }
+      }
+      .matchInfo {
+        height: 60%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+        h2 {
+          font-weight: normal;
+        }
+      }
+    }
+    .fixtureTeam {
+      width: 40%;
+      display: flex;
+      .teamContent {
+        width: 75%;
+        height: 100%;
+        .title {
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          text-align: center;
+          margin: 10px;
+          font-weight: normal;
+          font-size: 2vw;
+          width: 100%;
+        }
+      }
+      .logo {
+        margin: 5px;
+        height: 100%;
+        width: 25%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position-x: center;
+        background-position-y: center;
+        background-attachment: initial;
+        background-origin: initial;
+        background-color: initial;
       }
     }
   }

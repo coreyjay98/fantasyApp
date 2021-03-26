@@ -6,13 +6,16 @@ const Pitch = () => {
   const { playerTeam } = usePlayerContext();
 
   const reduce = (action) => {
+    if (!playerTeam) return 0;
     const arr = [];
     const red = Object.values(playerTeam).map((player) =>
       arr.push(
-        action === 'goals' ? player.games.goals || 0 : player.games.assists || 0
+        action === 'goals'
+          ? player.games?.goals || 0
+          : player.games?.assists || 0
       )
     );
-    return arr.reduce((a, b) => a + b);
+    return arr.length ? arr.reduce((a, b) => a + b) : 0;
   };
   return (
     <div className="pitch">

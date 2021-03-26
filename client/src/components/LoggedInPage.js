@@ -4,7 +4,7 @@ const LoggedInPage = () => {
   const { username, logoutUser } = useSiteContext();
   return (
     <div className="loggedIn">
-      <h1>Logged In as {username}</h1>
+      <h2>Logged in as {username}</h2>
       <button onClick={() => logoutUser()}>Log out</button>
     </div>
   );

@@ -31,15 +31,15 @@ const LoginPage = ({ loginUser }) => {
           onChange={userInput}
           className={loginError ? 'loginError' : null}
         ></input>
+        {loginError && (
+          <div>
+            <h2>Incorrect credentials, try again</h2>
+          </div>
+        )}
         <button onClick={() => loginUser(username, password)} type="button">
           Login
         </button>
       </form>
-      {loginError && (
-        <div>
-          <h1>Incorrect credentials, try again</h1>
-        </div>
-      )}
       {!loggedIn && <NewUser />}
     </div>
   );

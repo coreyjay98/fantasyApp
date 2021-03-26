@@ -2,9 +2,7 @@ const Signup = ({ userInput, registerUser, signupError }) => {
   return (
     <div className="background">
       <div className="page signupPage">
-        <div className="title">
-          <h2>Sign Up </h2>
-        </div>
+        <div className="title"></div>
         <div className="signup">
           <form>
             <input

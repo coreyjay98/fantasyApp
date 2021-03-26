@@ -1,5 +1,4 @@
 import Table from './Table';
-
 const LeagueTable = () => {
   return (
     <>

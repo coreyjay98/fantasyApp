@@ -137,8 +137,8 @@ body {
             }
             li {
               margin: 0;
-              background-color: $darkblue;
               border: solid 1px black;
+              background-color: aqua !important;
             }
           }
         }
@@ -445,18 +445,71 @@ body {
       background-origin: initial;
       background-color: initial;
       padding: 10px;
-
-      .saveButton {
+      .teamStats {
         position: absolute;
-        right: 100px;
-        top: 100px;
-        button {
-          height: 30px;
-          color: aliceblue;
-          background-color: $darkblue;
-          &:hover {
-            border: solid 2px black;
-            cursor: pointer;
+        background-color: aliceblue;
+        border-radius: 10px;
+        top: 10px;
+        right: 15px;
+        width: 9vw;
+        height: 9vh;
+        display: flex;
+        border: solid 2px $darkblue;
+        justify-content: center;
+        align-items: center;
+        .statContent {
+          color: $darkblue;
+          display: flex;
+          width: 100%;
+          flex-direction: column;
+          align-items: center;
+          span {
+            margin-top: 5px;
+          }
+          .goals {
+            width: 60%;
+            height: 20%;
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+            div {
+              display: flex;
+              height: 100%;
+              align-items: center;
+              svg {
+              }
+            }
+          }
+          .saveButton {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            .error {
+              border: solid 1px red;
+              height: 30px;
+              color: aliceblue;
+              border-radius: 10px;
+              background-color: $darkblue;
+              width: 50%;
+              user-select: none;
+              &:hover {
+                border: solid 2px black;
+                cursor: pointer;
+              }
+            }
+            .save {
+              height: 30px;
+              color: aliceblue;
+              border-radius: 10px;
+              background-color: $darkblue;
+              width: 50%;
+              &:hover {
+                border: solid 2px black;
+                cursor: pointer;
+              }
+            }
           }
         }
       }
@@ -478,7 +531,7 @@ body {
         justify-content: space-between;
         align-items: center;
         padding: 5px;
-        margin-bottom: 7px;
+        margin-bottom: 10px;
         .defender {
           height: 100%;
           width: 18%;
@@ -550,12 +603,7 @@ body {
         display: flex;
         flex-direction: column;
         align-items: center;
-        /*       background-image: linear-gradient(
-          135deg,
-          rgb(253, 234, 167) 0%,
-          rgb(216, 173, 72) 100%
-        ); */
-        background-color: aliceblue;
+        background-image: linear-gradient(135deg, aliceblue 0%, $darkblue 100%);
         border-radius: 15px;
         border: $darkblue 2px solid;
         border-radius: 15px;
@@ -624,6 +672,9 @@ body {
         }
         .name {
           text-align: center;
+          display: flex;
+          justify-content: center;
+
           align-self: center;
           max-width: 100%;
           word-wrap: break-word;
@@ -634,8 +685,12 @@ body {
           border-radius: 15px;
           margin-top: 2px;
           border: solid 1px $darkblue;
-          padding: 3px;
+          padding: 2px;
           margin-bottom: 5px;
+          p {
+            width: 100%;
+            font-size: 1rem;
+          }
         }
         &:hover {
           cursor: pointer;
@@ -764,7 +819,7 @@ body {
     margin-bottom: 8px;
     .listHeader {
       input {
-        width: 70px;
+        width: 100px;
       }
       span {
         width: 100px;
@@ -794,13 +849,18 @@ body {
           border: solid 1px black;
           align-items: center;
           float: left;
+          display: flex;
+          justify-content: space-between;
           &:hover {
             cursor: pointer;
             border: solid 2px black;
           }
+          div {
+            width: 33%;
+          }
           span {
-            width: 4vw;
-            margin: 0;
+            width: 100%;
+            margin-right: 5px;
           }
           .teamImage {
             background-repeat: no-repeat;
@@ -819,8 +879,26 @@ body {
   height: 5%;
   display: flex;
   justify-content: space-between;
+  .emptyButton {
+    color: aliceblue;
+    background-color: lightslategray;
+    &:hover {
+      cursor: auto;
+    }
+  }
   button {
-    height: 60%;
+    height: 70%;
+    width: 15%;
+    border-radius: 10px;
+    color: aliceblue;
+    background-color: $darkblue;
+    font-size: 16px;
+    margin: 5px;
+    justify-content: center;
+    &:hover {
+      cursor: pointer;
+      border: solid 2px aliceblue;
+    }
   }
 }
 
@@ -937,5 +1015,19 @@ body {
   justify-content: center;
   h2 {
     margin-top: 10px;
+  }
+}
+
+.lastEntry {
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  vertical-align: middle;
+  span {
+    display: flex !important;
+    align-items: center !important;
+  }
+  svg {
+    margin-right: 5px;
   }
 }

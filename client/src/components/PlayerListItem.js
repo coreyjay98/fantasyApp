@@ -4,6 +4,7 @@ import { ItemTypes } from '../dnd/Constants';
 import { useDrag } from 'react-dnd';
 import usePlayerContext from '../hooks/usePlayerContext';
 import { useState } from 'react';
+import { GiSoccerBall, GiSoccerKick } from 'react-icons/gi';
 
 const PlayerListItem = ({ player }) => {
   const { addNewPlayer, setSelectedPlayer, setPlayerDrop } = usePlayerContext();
@@ -28,14 +29,17 @@ const PlayerListItem = ({ player }) => {
   };
 
   return (
-    <ListItem
-      key={player._id}
-      ref={drag}
-      onClick={listItemClicked}
-      className="playerListItem"
-    >
+    <ListItem key={player._id} ref={drag} className="playerListItem">
       <ListItemText primary={`${player.lastName}`} />
       <ListItemText primary={player.position} className="middleEntry" />
+      <ListItemText className="lastEntry">
+        <GiSoccerBall />
+        {player.games.goals || 0}
+      </ListItemText>
+      <ListItemText className="lastEntry">
+        <GiSoccerKick />
+        {player.games.assists || 0}
+      </ListItemText>
       <ListItemText>
         <div
           style={{

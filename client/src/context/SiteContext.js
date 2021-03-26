@@ -35,6 +35,7 @@ const SiteContextProvider = ({ children }) => {
   };
 
   const logoutUser = async () => {
+    console.log('hit');
     localStorage.clear();
     setUsername('');
     setPlayerTeam({});

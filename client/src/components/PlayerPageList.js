@@ -6,9 +6,17 @@ import SortingInput from './SortingInput';
 import usePlayerContext from '../hooks/usePlayerContext';
 import PaginateButtons from './PaginateButtons';
 import FilterInput from './FilterInput';
+import { useEffect } from 'react';
 
 const PlayerPageList = () => {
-  const { allPlayers } = usePlayerContext();
+  const { allPlayers, setSearching } = usePlayerContext();
+
+  useEffect(() => {
+    return () => {
+      setSearching(false);
+    };
+  }, []);
+
   return (
     <>
       <div className="playerList">

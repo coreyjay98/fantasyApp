@@ -7,9 +7,7 @@ const AccountPage = () => {
   return (
     <div className="background">
       <div className="page accountPage">
-        <div className="title">
-          <h1>Your Account</h1>
-        </div>
+        <div className="title"></div>
         <div className="accountDisplay">
           {loggedIn ? <LoggedInPage /> : <LoginPage loginUser={loginUser} />}
         </div>

@@ -9,6 +9,7 @@ const PlayerContextProvider = ({ children }) => {
   const [selectedPlayer, _setSelectedPlayer] = useState({});
   const [playerDrop, _setPlayerDrop] = useState(false);
   const [sliceNumber, _setSliceNumber] = useState(0);
+  const [searching, _setSearching] = useState(false);
 
   useEffect(() => {
     (async () => {
@@ -45,6 +46,15 @@ const PlayerContextProvider = ({ children }) => {
       operation === 'Next' ? (sliceNumber += 1) : (sliceNumber -= 1)
     );
   };
+  const resetSlice = () => {
+    _setSliceNumber(1);
+  };
+  const setPlayers = (data) => {
+    setAllPlayers(data);
+  };
+  const setSearching = (result) => {
+    _setSearching(result);
+  };
 
   return (
     <PlayerContext.Provider
@@ -57,6 +67,13 @@ const PlayerContextProvider = ({ children }) => {
         setSelectedPlayer,
         playerData,
         setSliceNumber,
+        sliceNumber,
+        setPlayerData,
+        setPlayers,
+        resetSlice,
+        searching,
+        setSearching,
+        setPlayers,
       }}
     >
       {children}

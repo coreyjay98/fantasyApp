@@ -11,7 +11,7 @@ const Table = () => {
 
   useEffect(() => {
     (async () => {
-      /* const scorerFetch = await fetch(
+      /*       const tableFetch = await fetch(
         'https://v3.football.api-sports.io/standings?league=39&season=2020',
         {
           method: 'GET',
@@ -21,8 +21,9 @@ const Table = () => {
           },
         }
       );
-      const response = await scorerFetch.json();
-      setTopScorers(response.response); */
+      const response = await tableFetch.json();
+      console.log(response);
+      setLeagueTable(response.response[0].league.standings[0]); */
       setLeagueTable(standings);
     })();
   }, []);

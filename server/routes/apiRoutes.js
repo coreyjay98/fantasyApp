@@ -57,6 +57,17 @@ app.get('/players', async (req, res) => {
   res.send(find);
 });
 
+app.get('/player/:name', async (req, res) => {
+  const { name } = req.params;
+  const find = await Player.find({ lastName: name });
+  res.send(find);
+});
+app.get('/team/:team', async (req, res) => {
+  const { team } = req.params;
+  const find = await Player.find({ 'team.teamName': team });
+  res.send(find);
+});
+
 app.post('/team', authCheck, async (req, res) => {
   console.log(req.body.playerTeam);
   const validTeam = Object.values(req.body.playerTeam).filter((el) => el === 0);

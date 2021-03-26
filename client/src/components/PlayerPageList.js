@@ -5,6 +5,7 @@ import PlayerListItem from './PlayerListItem';
 import SortingInput from './SortingInput';
 import usePlayerContext from '../hooks/usePlayerContext';
 import PaginateButtons from './PaginateButtons';
+import FilterInput from './FilterInput';
 
 const PlayerPageList = () => {
   const { allPlayers } = usePlayerContext();
@@ -15,7 +16,9 @@ const PlayerPageList = () => {
           <List>
             <ListItem>
               <ListItemText primary="Player" />
-              <ListItemText primary="Position" />
+              <ListItemText>
+                <FilterInput allPlayers={allPlayers} />
+              </ListItemText>
               <ListItemText>
                 <SortingInput allPlayers={allPlayers} />
               </ListItemText>

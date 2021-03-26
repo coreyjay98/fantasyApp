@@ -1,12 +1,10 @@
 import PitchPosition from './positions/PitchPosition';
 import usePlayerContext from '../hooks/usePlayerContext';
-import SaveButton from './SaveButton';
 
 const PitchPositions = () => {
   const { playerTeam } = usePlayerContext();
   return (
     <>
-      <SaveButton />
       <div className="goal">
         <PitchPosition
           position="goalkeeper"

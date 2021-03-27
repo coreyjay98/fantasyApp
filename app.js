@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const path = require('path');
 const app = express();
 const ck = require('ckey');
-
 const User = require('./server/models/User');
 const Player = require('./server/models/Players');
 

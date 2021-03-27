@@ -7,8 +7,8 @@ module.exports = {
       console.log(player);
       await Player.create({
         playerId: player.playerID,
-        firstName: player.firstname,
-        lastName: player.lastname,
+        firstName: player.firstName,
+        lastName: player.lastName,
         nationality: player.nationality,
         photo: player.photo,
         position: player.position,

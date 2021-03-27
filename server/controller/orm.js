@@ -3,29 +3,27 @@ const Player = require('../models/Players');
 
 module.exports = {
   inputPlayerData: async (data) => {
-    data.forEach((entry) => {
-      const { player, statistics } = entry;
-      console.log(player.name);
-      Player.create({
-        playerId: player.id,
+    data.forEach(async (player) => {
+      console.log(player);
+      await Player.create({
+        playerId: player.playerID,
         firstName: player.firstname,
         lastName: player.lastname,
-        nationality: player.birth.country,
+        nationality: player.nationality,
         photo: player.photo,
-        position: statistics[0].games.position,
+        position: player.position,
         team: {
-          teamName: statistics[0].team.name,
-          teamId: statistics[0].team.id,
-          teamLogo: statistics[0].team.logo,
+          teamName: player.team.teamName,
+          teamId: player.team.teamId,
+          teamLogo: player.team.teamLogo,
         },
         games: {
-          appearances: statistics[0].games.appearences,
-          goals: statistics[0].goals.total,
-          assists: statistics[0].goals.assists,
-          cards: statistics[0].cards.yellow,
+          appearances: player.games.appearances,
+          goals: player.games.goals,
+          assists: player.games.assists,
+          cards: player.games.cards,
         },
       });
-      console.log(entry);
     });
   },
 };

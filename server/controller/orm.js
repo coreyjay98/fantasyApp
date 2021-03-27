@@ -22,7 +22,6 @@ module.exports = {
           appearances: statistics[0].games.appearences,
           goals: statistics[0].goals.total,
           assists: statistics[0].goals.assists,
-          rating: statistics[0].games.rating,
           cards: statistics[0].cards.yellow,
         },
       });

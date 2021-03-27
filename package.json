@@ -4,6 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "start":"node app.js",
     "server": "npx nodemon app.js",
     "client": "cd client && npm run start",
     "dev": "concurrently --kill-others-on-fail 'npm:server' 'npm:client'",

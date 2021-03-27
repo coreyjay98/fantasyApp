@@ -28,6 +28,7 @@ const TopScorerCarousel = () => {
       <div className="carousel">
         <Carousel
           showThumbs={false}
+          autoPlay={true}
           width="85%"
           interval={5000}
           infiniteLoop={true}

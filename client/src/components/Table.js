@@ -2,6 +2,7 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
+import Avatar from '@material-ui/core/Avatar';
 import TableItem from './TableItem';
 import { useState, useEffect } from 'react';
 import { standings } from '../testing/standings';
@@ -39,7 +40,9 @@ const Table = () => {
             <ListItemText primary="L" />
             <ListItemText primary="GP" />
             <ListItemText primary="P" />
-            <ListItemText />
+            <ListItemAvatar>
+              <img src=""></img>
+            </ListItemAvatar>
           </ListItem>
         </List>
       </div>

@@ -13,7 +13,6 @@ const PlayerContextProvider = ({ children }) => {
 
   useEffect(() => {
     (async () => {
-      console.log(sliceNumber);
       const res = await fetch('/api/players');
       const response = await res.json();
       setAllPlayers([]);

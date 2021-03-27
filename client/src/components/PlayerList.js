@@ -13,7 +13,7 @@ const PlayerList = () => {
           method: 'GET',
           headers: {
             'x-rapidapi-host': 'v3.football.api-sports.io',
-            'x-rapidapi-key': '6fb6f22c9a62ade9d584fad2f0cc68df',
+            'x-rapidapi-key': process.env.REACT_APP_APIKEY,
           },
         }
       );

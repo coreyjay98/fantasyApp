@@ -4,6 +4,7 @@ const jwt = require('jsonwebtoken');
 const app = express();
 const User = require('../models/User');
 const authCheck = require('../middleware/auth');
+const ck = require('ckey');
 
 app.post('/register', async ({ body }, res) => {
   const { username, password } = body;
@@ -14,7 +15,7 @@ app.post('/register', async ({ body }, res) => {
       username,
       password: hash,
     });
-    const token = jwt.sign({ id: newUser.id }, 'secret', { expiresIn: '24h' });
+    const token = jwt.sign({ id: newUser.id }, ck.secret, { expiresIn: '24h' });
     res.json({
       token,
       username,
@@ -39,7 +40,7 @@ app.post('/login', async ({ body }, res) => {
     return res
       .status(401)
       .json({ success: false, message: 'Password does not match' });
-  const token = jwt.sign({ id: user.id }, 'secret', { expiresIn: '24h' });
+  const token = jwt.sign({ id: user.id }, ck.secret, { expiresIn: '24h' });
   res.json({
     token,
     username,

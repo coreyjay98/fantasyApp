@@ -1,6 +1,4 @@
 const FixtureList = ({ fixture }) => {
-  console.log(fixture);
-
   const dateParse = (date, action) => {
     const unix = new Date(Date.parse(date));
     return action === 'time'
@@ -36,7 +34,7 @@ const FixtureList = ({ fixture }) => {
         </div>
       </div>
       <div className="fixtureTeam">
-        <div className="teamContentRight">
+        <div className="teamContent">
           <h2 className="title">{fixture.teams.away.name}</h2>
         </div>
         <div

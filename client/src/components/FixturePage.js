@@ -9,7 +9,7 @@ const FixturePage = () => {
   useEffect(() => {
     (async () => {
       setFetchFixtures(true);
-      /*       const res = await fetch(
+      const res = await fetch(
         `https://v3.football.api-sports.io/fixtures/?season=2020&league=39&from=${getDate(
           'today'
         )}&to=${getDate('future')}`,
@@ -22,8 +22,7 @@ const FixturePage = () => {
         }
       );
       const response = await res.json();
-      await _setFixtures(response.response); */
-      _setFixtures(arr);
+      await _setFixtures(response.response);
       setFetchFixtures(false);
     })();
   }, []);

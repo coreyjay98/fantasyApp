@@ -4,6 +4,7 @@ const app = express();
 const Player = require('../models/Players');
 const User = require('../models/User');
 const authCheck = require('../middleware/auth');
+const ck = require('ckey');
 
 const { inputPlayerData } = require('../controller/orm');
 
@@ -18,7 +19,7 @@ const { inputPlayerData } = require('../controller/orm');
           method: 'GET',
           headers: {
             'x-rapidapi-host': 'v3.football.api-sports.io',
-            'x-rapidapi-key': '6fb6f22c9a62ade9d584fad2f0cc68df',
+            'x-rapidapi-key': ck.REACT_APP_APIKEY,
           },
         }
       );
@@ -38,7 +39,7 @@ const { inputPlayerData } = require('../controller/orm');
       method: 'GET',
       headers: {
         'x-rapidapi-host': 'v3.football.api-sports.io',
-        'x-rapidapi-key': '6fb6f22c9a62ade9d584fad2f0cc68df',
+        'x-rapidapi-key': ck.REACT_APP_APIKEY,
       },
     }
   );
@@ -47,11 +48,6 @@ const { inputPlayerData } = require('../controller/orm');
   res.send(response);
 }); */
 
-/* app.get('/players', async (req, res) => {
-  console.log('hit');
-  const find = await Player.find();
-  res.send(find);
-}); */
 app.get('/players', async (req, res) => {
   const find = await Player.find();
   res.send(find);

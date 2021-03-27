@@ -14,7 +14,7 @@ const TopScorerCarousel = () => {
                   method: 'GET',
                   headers: {
                     'x-rapidapi-host': 'v3.football.api-sports.io',
-                    'x-rapidapi-key': '6fb6f22c9a62ade9d584fad2f0cc68df',
+                    'x-rapidapi-key': process.env.REACT_APP_APIKEY,
                   },
                 }
               );
@@ -24,11 +24,11 @@ const TopScorerCarousel = () => {
   }, []);
   return (
     <>
-      <h1>Top Scorers</h1>
+      <h1 style={{ marginLeft: '10px' }}>Top Scorers</h1>
       <div className="carousel">
         <Carousel showThumbs={false}>
           {topScorers.map((player) => (
-            <CarouselItem player={player} />
+            <CarouselItem player={player} key={player.player.name} />
           ))}
         </Carousel>
       </div>

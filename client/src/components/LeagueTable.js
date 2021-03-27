@@ -3,7 +3,7 @@ const LeagueTable = () => {
   return (
     <>
       <div className="homeTitle">
-        <h1>LeagueTable</h1>
+        <h1>League Table</h1>
       </div>
       <div className="tableHolder">
         <Table />

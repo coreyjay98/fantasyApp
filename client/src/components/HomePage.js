@@ -12,7 +12,10 @@ const HomePage = () => {
     <div className="background">
       <div className="page homePage">
         <div className="title">
-          <h1>Welcome {username}!</h1>
+          <h1>
+            Welcome to Fantasy Futball {username}, create your team in the
+            'team' page!
+          </h1>
         </div>
         <div className="homeContent">
           <div className="homeLeft">

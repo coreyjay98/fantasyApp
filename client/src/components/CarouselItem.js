@@ -28,7 +28,7 @@ const CarouselItem = ({ player }) => {
         <div className="stats">
           <div className="leftStats">
             <h2>Goals - {player.statistics[0].goals.total}</h2>
-            <h2>Assists - {player.statistics[0].goals.assists}</h2>
+            <h2>Assists - {player.statistics[0].goals.assists || 0}</h2>
             <h2>Apps - {player.statistics[0].games.appearences}</h2>
           </div>
           <div className="rightStats">

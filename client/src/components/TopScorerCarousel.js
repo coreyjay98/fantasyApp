@@ -26,7 +26,12 @@ const TopScorerCarousel = () => {
     <>
       <h1 style={{ marginLeft: '10px' }}>Top Scorers</h1>
       <div className="carousel">
-        <Carousel showThumbs={false}>
+        <Carousel
+          showThumbs={false}
+          width="85%"
+          interval={5000}
+          infiniteLoop={true}
+        >
           {topScorers.map((player) => (
             <CarouselItem player={player} key={player.player.name} />
           ))}

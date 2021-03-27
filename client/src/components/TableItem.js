@@ -7,6 +7,7 @@ import Avatar from '@material-ui/core/Avatar';
 const TableItem = ({ team }) => {
   return (
     <ListItem>
+      <ListItemText primary={team.rank} />
       <ListItemText primary={team.team.name} />
       <ListItemText primary={team.all.win} />
       <ListItemText primary={team.all.draw} />

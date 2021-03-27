@@ -34,6 +34,7 @@ const Table = () => {
       <div className="listHeader">
         <List>
           <ListItem>
+            <ListItemText primary="Pos" />
             <ListItemText primary="Team" />
             <ListItemText primary="W" />
             <ListItemText primary="D" />

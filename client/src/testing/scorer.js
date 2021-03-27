@@ -192,7 +192,7 @@ export const scorer = [
   {
     player: {
       id: 1485,
-      name: 'Bruno Fernandes',
+      name: 'Bruno',
       firstname: 'Bruno Miguel',
       lastname: 'Borges Fernandes',
       age: 27,

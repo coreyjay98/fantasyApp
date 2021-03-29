@@ -1,10 +1,9 @@
 import './App.scss';
 import MainLayout from './components/MainLayout';
-import HomePage from './components/HomePage';
-import TeamPage from './components/TeamPage';
-import AccountPage from './components/AccountPage';
-import FixturePage from './components/FixturePage';
-import SignupPage from './components/SignupPage';
+import HomePage from './components/home/HomePage';
+import TeamPage from './components/team/TeamPage';
+import AccountPage from './components/account/AccountPage';
+import SignupPage from './components/account/SignupPage';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import useSiteContext from './hooks/useSiteContext';
 import { useEffect } from 'react';
@@ -24,6 +23,7 @@ function App() {
       const response = await res.json();
       fetchLogin(response);
     })();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -34,7 +34,6 @@ function App() {
           <Route exact path="/team" component={TeamPage} />
           <Route exact path="/account" component={AccountPage} />
           <Route exact path="/signup" component={SignupPage} />
-          <Route exact path="/fixtures" component={FixturePage} />
         </Switch>
       </MainLayout>
     </Router>

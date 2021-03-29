@@ -7,7 +7,6 @@ const PlayerContextProvider = ({ children }) => {
   const [allPlayers, setAllPlayers] = useState([]);
   const [playerTeam, _setPlayerTeam] = useState({});
   const [selectedPlayer, _setSelectedPlayer] = useState({});
-  const [playerDrop, _setPlayerDrop] = useState(false);
   const [sliceNumber, _setSliceNumber] = useState(0);
   const [searching, _setSearching] = useState(false);
 
@@ -34,10 +33,6 @@ const PlayerContextProvider = ({ children }) => {
   const setSelectedPlayer = (player) => {
     _setSelectedPlayer({});
     _setSelectedPlayer(player);
-  };
-
-  const setPlayerDrop = (value) => {
-    _setPlayerDrop(value);
   };
 
   const setSliceNumber = (operation) => {
@@ -72,7 +67,6 @@ const PlayerContextProvider = ({ children }) => {
         resetSlice,
         searching,
         setSearching,
-        setPlayers,
       }}
     >
       {children}

@@ -41,7 +41,7 @@ const Table = () => {
             <ListItemText primary="GP" />
             <ListItemText primary="P" />
             <ListItemAvatar>
-              <img src="" alt="placeholder"></img>
+              <img className="none " src="" alt=" "></img>
             </ListItemAvatar>
           </ListItem>
         </List>

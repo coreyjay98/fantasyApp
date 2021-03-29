@@ -11,6 +11,10 @@ body {
   overflow-y: hidden;
 }
 
+.none {
+  visibility: hidden;
+}
+
 .navbar {
   background-color: $darkblue;
   color: aliceblue;
